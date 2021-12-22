@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import TodoComponent from './components/todos'
+import InputForm from './components/inputForm'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -15,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <InputForm />
         {
           todo ? todo.map((data) => (<TodoComponent key={data.id} {...data}></TodoComponent>)):"wait"
         }      

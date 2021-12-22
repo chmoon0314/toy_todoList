@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.json())
+
 app.get('/api/todos', (req, res) => {
   const todos = [
     {id: 1, content: "밥먹기", deadline: "2021-12-30-12:00"},
@@ -10,6 +12,11 @@ app.get('/api/todos', (req, res) => {
   ];
 
   res.json(todos)
+})
+
+app.post('/api/todos', (req, res) => {
+  console.log(req.body);
+  res.status(200).end();
 })
 
 const port = 5000;
